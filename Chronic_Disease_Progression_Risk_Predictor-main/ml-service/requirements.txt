@@ -1,0 +1,19 @@
+# NOTE: acute_model.pkl / progression_model.pkl were pickled under NumPy 2.x
+# (NumPy's PCG64 bit-generator pickle format changed between 1.x and 2.x).
+# numpy MUST be >=2.0 here or you will hit:
+#   ValueError: <class 'numpy.random._pcg64.PCG64'> is not a known BitGenerator module.
+# on startup when the ML service loads the frozen models.
+#
+# shap/numba were removed on purpose: numba's first-call JIT warm-up can
+# take 20-60+ seconds, which is long enough to time out a single-patient
+# scoring request. Explanations use a dependency-free occlusion method
+# instead (see explainer.py) - fast for both single and batch scoring.
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pandas>=2.2.2,<2.3
+numpy>=2.0.0,<2.5
+scipy>=1.13.0,<1.18
+scikit-learn==1.7.2
+pymongo==4.8.0
+python-dotenv==1.0.1

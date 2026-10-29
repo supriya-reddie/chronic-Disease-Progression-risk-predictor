@@ -1,0 +1,16 @@
+{
+  "acute": {
+    "threshold_f1": 0.6729885569732816,
+    "threshold_recall": 0.44930505667073944,
+    "threshold_prec": 0.5280421158266413,
+    "selected": 0.44930505667073944,
+    "low_threshold": 0.1797220226682958
+  },
+  "progression": {
+    "threshold_f1": 0.633018942398546,
+    "threshold_recall": 0.34618276369626055,
+    "threshold_prec": 0.7611690999507638,
+    "selected": 0.34618276369626055,
+    "low_threshold": 0.13847310547850422
+  }
+}
